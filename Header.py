@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from  selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from HeaderLocators import HeaderLocators
+from selenium.webdriver.common.keys import Keys
 import time
 
 
@@ -98,6 +99,17 @@ class Header(object):
         try:
             return WebDriverWait(self.driver, self.timeout).until(
                 EC.presence_of_element_located((By.XPATH, self.search_input)))
+        except Exception as e:
+            raise e
+
+    def search(self, key="dress"):
+        try:
+            action = ActionChains(self.driver)
+            action.click(self.get_search_input())
+            action.send_keys(key)
+            action.click(self.get_search_lup())
+            action.perform()
+            return self.get_Current_URL()
         except Exception as e:
             raise e
 

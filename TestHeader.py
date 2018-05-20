@@ -104,6 +104,9 @@ class TestHeader(unittest.TestCase):
     def test_click_category_tshirts(self):
         self.assertEqual(Header(self.driver).click_category_tshirts(), URLs.category_tshirts)
 
+    def test_search(self):
+        self.assertEqual(Header(self.driver).search(), URLs.search_dress)
+
     def test_all(self):
         header = Header(self.driver)
         header.get_banner()

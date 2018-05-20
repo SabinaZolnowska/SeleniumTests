@@ -12,3 +12,4 @@ class URLs(object):
     category_casual_dresses = 'http://automationpractice.com/index.php?id_category=9&controller=category'
     category_evening_dresses = 'http://automationpractice.com/index.php?id_category=10&controller=category'
     category_summer_dresses = 'http://automationpractice.com/index.php?id_category=11&controller=category'
+    search_dress = 'http://automationpractice.com/index.php?controller=search&orderby=position&orderway=desc&search_query=dress&submit_search='

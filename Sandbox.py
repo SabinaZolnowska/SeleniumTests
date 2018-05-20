@@ -11,7 +11,7 @@ class Sandbox():
     def __init__(self):
         #super().__init__()
         options = webdriver.ChromeOptions()
-        options.add_argument('headless')
+        #options.add_argument('headless')
         options.add_argument('incognito')
         self.driver = webdriver.Chrome("chromedriver/chromedriver.exe", options=options)
         self.driver.maximize_window()
@@ -33,7 +33,7 @@ class Sandbox():
 
     def move_to(self):
         #Header(self.driver).move_to_category_women()
-        #time.sleep(10)
+
         #Header(self.driver).get_tops()
         #Header(self.driver).move_to_tops()
         #Header(self.driver).click_category_women_tops()
@@ -46,6 +46,8 @@ class Sandbox():
         #Header(self.driver).click_category_dresses_casual_dresses()
         #Header(self.driver).click_category_dresses_evening_dresses()
         #Header(self.driver).click_category_dresses_summer_dresses()
+        Header(self.driver).search()
+        time.sleep(10)
         self.driver.close()
 
 x = Sandbox()
